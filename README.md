@@ -68,22 +68,9 @@ All incoming requests undergo strict validation and security checks:
 | `Project` | One Project → Many Tasks |
 | `Task` | Linked to specific users and projects |
 
-## 8. API Overview
 
-### 1. Authentication
-* **POST** `/auth/signup` - Register a new user
-* **POST** `/auth/login` - Authenticate and retrieve JWT
 
-### 2. Projects
-* **POST** `/projects` - Create a new project (Admin)
-* **GET** `/projects` - Retrieve projects
-
-### 3. Tasks
-* **POST** `/tasks` - Create and assign a task (Admin)
-* **GET** `/tasks` - Fetch tasks based on user role
-* **PUT** `/tasks/{id}` - Update task details or status
-
-## 9. Submission Details
+## 8. Submission Details
 The application is deployed using Railway (mandatory as per assignment). It was completed within 1–2 days (8–12 hours) as per constraints.
 
 * **Live Backend**
@@ -91,7 +78,7 @@ The application is deployed using Railway (mandatory as per assignment). It was 
 * **GitHub Repository:** `[LINK]`
 * **README file:** Included
 
-## 10. Conclusion & Author
+## 9. Conclusion & Author
 **Darpan Patil**
 *Full Stack Developer (Java + React)*
 
