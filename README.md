@@ -1,95 +1,98 @@
-// README.txt
-TEAM TASK MANAGER - FRONTEND APPLICATION
-=========================================
+# Team Task Manager
+### Full-Stack Project Management & Task Tracking Application
 
-PROJECT OVERVIEW
-----------------
-A professional, production-ready team task management application with:
-- JWT Authentication
-- Role-based access (Admin/Member)
-- Full CRUD operations for projects and tasks
-- Responsive design for all devices (mobile, tablet, desktop)
-- Dark/Light theme support
-- Smooth animations using Framer Motion
+## 1. Overview
+The Team Task Manager is a full-stack web application designed to help teams efficiently manage projects, assign tasks, and track progress with role-based access control (Admin & Member). This project is built as part of the technical assessment and fulfills all required features including authentication, project management, task tracking, and deployment.
 
-SETUP INSTRUCTIONS
-------------------
+## 2. Technology Stack
+| Category | Technology                            |
+| :--- |:--------------------------------------|
+| **Backend** | Java 11, Spring Boot, Hibernate / JPA |
+| **Frontend** | React (Vite), Tailwind CSS, Axios     |
+| **Security** | Spring Security + JWT Authentication  |
+| **Database** |  PostgreSQL                           |
+| **Build Tool** | Maven                                 |
+| **Deployment** | Railway (Backend + DB)                |
 
-1. Install dependencies:
-   npm install
+## 3. Architecture & Design Approach
+The backend follows a layered architecture that separates concerns clearly:
 
-2. Start development server:
-   npm run dev
+`Controller` → `ControllerImpl` → `Service` → `ServiceImpl` → `Repository` → `Database`
 
-3. Build for production:
-   npm run build
+### Key Design Principles
+* Separation of concerns
+* DTO-based communication
+* Clean service layer logic
+* Scalable structure
 
-4. Preview production build:
-   npm run preview
+## 4. Role-Based Access Control
+The system relies on strict Role-Based Access Control (RBAC) to manage permissions:
 
-BACKEND CONNECTION
-------------------
-The frontend expects the backend API at: http://localhost:8080/api
+### Admin
+* Create projects
+* Assign tasks
+* Manage users
 
-Required API Endpoints:
-- POST   /api/auth/signup
-- POST   /api/auth/login
-- GET    /api/users (Admin only)
-- GET    /api/projects
-- POST   /api/projects
-- PUT    /api/projects/:id
-- DELETE /api/projects/:id
-- GET    /api/tasks
-- POST   /api/tasks
-- PUT    /api/tasks/:id
-- DELETE /api/tasks/:id
-- GET    /api/dashboard
+### Member
+* View assigned tasks
+* Update task status
 
-RESPONSIVE BREAKPOINTS
-----------------------
-- Desktop: > 1024px (full sidebar)
-- Tablet: 768px - 1024px (adjusted grid layout)
-- Mobile: < 768px (collapsible hamburger menu)
+## 5. Task Management & Dashboard
+Task tracking allows state changes and provides real-time status updates via the dashboard.
 
-TECHNOLOGY STACK
-----------------
-- React 18
-- Vite (Build tool)
-- React Router DOM v6
-- Axios (API calls)
-- Framer Motion (Animations)
-- Plain CSS (No Tailwind)
+### Task Statuses:
+* Pending
+* In Progress
+* Completed
 
-FEATURES
---------
-✅ Authentication (Login/Signup)
-✅ Role-based Access Control
-✅ Dashboard with Stats
-✅ Project Management
-✅ Task Management with Status Updates
-✅ User Management (Admin only)
-✅ Dark/Light Theme Toggle
-✅ Responsive Mobile Navigation
-✅ Toast Notifications
-✅ Loading Skeletons
-✅ Form Validations
-✅ Protected Routes
+### Dashboard Analytics Overview:
+* Total tasks
+* Completed tasks
+* Pending tasks
+* Overdue tasks
 
-TROUBLESHOOTING
----------------
-1. Make sure backend is running on port 8080
-2. Check CORS settings on backend
-3. Clear localStorage if having auth issues
-4. Check browser console for errors
+## 6. Security & Validation
+All incoming requests undergo strict validation and security checks:
+* Input validations using annotations
+* Exception handling (Global Exception Handler)
+* JWT-based secure endpoints
+* Role-based authorization
 
-DEPLOYMENT
-----------
-To deploy on Railway:
-1. Push code to GitHub
-2. Connect Railway to GitHub
-3. Set build command: npm run build
-4. Set start command: npm run preview
+## 7. Data Model
 
-VIDEO DEMO LINK: [Insert your video link here]
-LIVE URL: [Insert your live URL here]
-GITHUB REPO: [Insert your GitHub repo link here]
+### Entities & Relationships
+| Entity | Relationships |
+| :--- | :--- |
+| `User` | One User → Many Tasks, Many Users ↔ Many Projects |
+| `Role` | Defines system privileges (Admin/Member) |
+| `Project` | One Project → Many Tasks |
+| `Task` | Linked to specific users and projects |
+
+## 8. API Overview
+
+### 1. Authentication
+* **POST** `/auth/signup` - Register a new user
+* **POST** `/auth/login` - Authenticate and retrieve JWT
+
+### 2. Projects
+* **POST** `/projects` - Create a new project (Admin)
+* **GET** `/projects` - Retrieve projects
+
+### 3. Tasks
+* **POST** `/tasks` - Create and assign a task (Admin)
+* **GET** `/tasks` - Fetch tasks based on user role
+* **PUT** `/tasks/{id}` - Update task details or status
+
+## 9. Submission Details
+The application is deployed using Railway (mandatory as per assignment). It was completed within 1–2 days (8–12 hours) as per constraints.
+
+* **Live Backend**
+* **Live Frontend**
+* **GitHub Repository:** `[LINK]`
+* **README file:** Included
+
+## 10. Conclusion & Author
+**Darpan Patil**
+*Full Stack Developer (Java + React)*
+
+This project demonstrates full-stack development skills, clean architecture design, secure authentication & authorization, and real-world project management functionality.
