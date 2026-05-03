@@ -1,0 +1,209 @@
+/* src/styles/responsive.css */
+/* Tablet Styles (768px - 1024px) */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .content-inner {
+    padding: 1.25rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile Styles (up to 768px) */
+@media (max-width: 768px) {
+  /* Hide desktop sidebar */
+  .sidebar {
+    display: none;
+  }
+  
+  /* Show mobile navigation */
+  .mobile-nav-toggle {
+    display: block;
+  }
+  
+  /* Adjust main content */
+  .main-content-expanded,
+  .main-content-collapsed {
+    margin-left: 0;
+  }
+  
+  .content-inner {
+    padding: 1rem;
+    padding-top: 4rem;
+  }
+  
+  /* Responsive Grids */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+  
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* Page Header */
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+  
+  .page-title {
+    font-size: 1.25rem;
+  }
+  
+  /* Cards */
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  /* Modal */
+  .modal {
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 1rem;
+  }
+  
+  /* Toast */
+  .toast-container {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+  }
+  
+  .toast {
+    min-width: auto;
+    width: calc(100% - 2rem);
+  }
+  
+  /* Forms */
+  .input-field,
+  .input-select,
+  .input-textarea {
+    padding: 0.625rem 0.875rem;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+  }
+  
+  /* Task Item */
+  .task-item {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .task-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  /* Project Stats */
+  .project-stats {
+    flex-wrap: wrap;
+  }
+}
+
+/* Small Mobile Styles (up to 480px) */
+@media (max-width: 480px) {
+  .content-inner {
+    padding: 0.75rem;
+    padding-top: 3.5rem;
+  }
+  
+  .stat-value {
+    font-size: 1.25rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.75rem;
+  }
+  
+  .modal-title {
+    font-size: 1.125rem;
+  }
+  
+  .badge {
+    font-size: 0.6875rem;
+    padding: 0.1875rem 0.5rem;
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .mobile-menu {
+    overflow-y: auto;
+  }
+  
+  .modal {
+    max-height: 85vh;
+  }
+  
+  .toast-container {
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+/* iPad and Tablet Landscape */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .content-inner {
+    max-width: 1600px;
+  }
+  
+  .stats-grid {
+    gap: 2rem;
+  }
+  
+  .grid-3 {
+    gap: 2rem;
+  }
+}
